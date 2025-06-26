@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+}
+
+:root {
+    --bg-color: #f7f7f7;
+    --second-bg-color: #eaeaea;
+    --text-color: #3f3844;
+    --main-color: #ff5733;
+    --other-color: #5d6c83;
+}
+
+html {
+    font-size: 62.5%; /*1 rem = 10px */
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-family: "AR One Sans", sans-serif;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 10% 2rem;
+}
+
+/* Utilidades */
+
+.heading {
+    font-size: 4.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.heading-description {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+span {
+    color: var(--main-color);
+}
+
+/* Header */
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 10%;
+    background-color: var(--bg-color);
+    box-shadow: 0 1px .3rem var(--text-color);
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    font-weight: 700;
+    transition-duration: .50s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.navbar {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar a {
+    color: var(--text-color);
+    font-weight: 600;
+    transition: .3s ease;
+    border-bottom: .2rem solid transparent;
+    text-transform: uppercase;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    border-bottom-color: var(--main-color);
+    color: var(--main-color);
+}
+
+/* Home */
+
+.home {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-image: url(../images/home-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-content {
+    width: 60%;
+    margin-left: 5rem;
+    padding: 6rem 2rem;
+    background-color: rgb(234, 234, 234, 0.9);
+    border: .2rem solid var(--main-color);
+    border-radius: 2rem;
+}
+
+.home-content h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+
+.home-content h3 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.home-content p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+/* Redes Sociales */
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.2rem;
+    height: 4.2rem;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .50s ease;
+}
+
+.social-media a:hover {
+    transform: scale(1.2) translateY(-1rem);
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 2.5rem var(--main-color);
+}
+
+.btn,
+.btn-ws {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    margin: 1rem 3rem 1rem 0;
+    background-color: var(--main-color);
+    border-radius: 4rem;
+    font-size: 2rem;
+    color: var(--bg-color);
+    font-weight: 400;
+    transition: .3s ease;
+}
+
+.btn-ws {
+    display: inline-flex;
+    align-items: center;
+    background-color: green;
+}
+
+.btn-ws i {
+    font-size: 2.5;
+    padding-right: .7rem;
+}
+
+.btn-ws p {
+    margin: 0;
+    border-left: .2rem solid var(--bg-color);
+    padding-left: .7rem;
+}
+
+.btn:hover {
+    box-shadow: 0 0 1.6rem var(--main-color);
+    transform: scale(1.1);
+}
+
+.btn-ws:hover {
+    box-shadow: 0 0 1.6rem green;
+    transform: scale(1.1);
+}
+
+/* About me */
+
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--second-bg-color);
+    gap: 8rem;
+}
+
+.about .heading {
+    display: flex;
+    text-align: center;
+}
+
+.about .heading span {
+    display: block;
+    margin-left: 10px;
+}
+
+.about-img img {
+    width: 26vw;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    box-shadow: 0 0 2.5rem var(--main-color);
+    cursor: pointer;
+    transition: .4s ease;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+.about-img img:hover {
+    box-shadow: 0 0 2.5rem var(--main-color),
+                0 0 3.5rem var(--main-color),
+                0 0 4.5rem var(--main-color);
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2.4rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.about-content {
+    padding: 0 4rem;
+}
+
+.about-content h2 {
+    line-height: 1.2;
+}
+
+.about-content h3 {
+    font-size: 3rem;
+}
+
+.about-content p {
+    margin: 2rem 0 3rem;
+}
+
+/* SKILSS */
+
+.skills h3 {
+    display: inline-flex;
+    margin-bottom: 2rem;
+    border-bottom: .2rem solid var(--main-color);
+}
+
+.content-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    text-align: center;
+}
+
+.item-skill span, .item-skill i {
+    display: block;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.item-skill {
+    padding: 1rem;
+}
+
+.item-skill i {
+    font-size: 5rem;
+}
+
+/* Servicios */
+
+.services h2 {
+    margin-bottom: 2rem;
+
+}
+
+.services-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+}
+
+.service-item {
+    flex: 1 1 30rem;
+    background-color: var(--second-bg-color);
+    padding: 6rem 2rem 6rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 .5rem var(--main-color);
+    transition: all .5s ease;
+}
+
+.service-item:hover {
+    outline: .1rem solid var(--main-color);
+    cursor: pointer;
+    transform: translateY(-.5rem) scale(1.02);
+}
+
+.service-item i {
+    font-size: 6rem;
+    color: var(--main-color);
+}
+
+.service-item h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.service-item p{
+    margin: 1rem 0;
+}
+
+.btn-now {
+    display: inline-block;
+    font-size: 2.2rem;
+    line-height: 1.2rem;
+    font-weight: 700;
+    padding: .7rem 0;
+    color: var(--text-color);
+    border-bottom: .2rem solid var(--other-color);
+}
+
+.btn-now i{
+    vertical-align: middle;
+    font-size: 2.5rem;
+    margin-left: .5rem;
+}
+
+.btn-now:hover {
+    border-color: var(--main-color);
+}
